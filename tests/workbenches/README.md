@@ -29,7 +29,7 @@ workbenches/
 - **`notebooks_server/controller/test_spawning.py`** - Tests basic notebook creation via Notebook CR and validates pod creation. Also tests Auth proxy container resource customization via annotations
 - **`notebooks_server/controller/test_custom_images.py`** - Validates custom workbench images contain required Python packages by spawning a workbench, installing any missing packages, and executing import verification
 - **`notebooks_server/controller/upgrade/test_upgrade.py`** - Upgrade survival tests. Pre-upgrade creates a notebook and captures its pod creation timestamp to a ConfigMap. Post-upgrade verifies the pod was not restarted by comparing timestamps
-- **`notebook_images/test_upgrade_n_minus_1.py`** - N-1 workbench image survival tests for JupyterLab, Code Server, and RStudio. Pre-upgrade launches workbenches on source-version ImageStream tags; post-upgrade validates pod survival, PVC data, clean logs, and in-container HTTP responsiveness
+- **`notebook_images/test_upgrade_n_minus_1.py`** - Parametrized N-1 workbench image survival tests for JupyterLab, Code Server, and RStudio (EUS). Pre-upgrade launches dashboard-faithful workbenches and captures baselines; post-upgrade verifies pod continuity, image invariants, StatefulSet health, PVC data, logs, and HTTP health
 
 ## Test Markers
 
